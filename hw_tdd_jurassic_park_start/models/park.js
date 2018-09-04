@@ -64,13 +64,13 @@ Park.prototype.diet = function () {
               'omnivore': 0};
   for (let i = 0; i < this.dinosaurs.length; i++){
     const diet = this.dinosaurs[i].diet;
-    if (Object.keys(dietObj)[0] == diet) {
+    if (diet === "carnivore") {
       dietObj.carnivore += 1;
     }
-    else if (Object.keys(dietObj)[1] == diet) {
+    else if (diet === "herbivore") {
       dietObj.herbivore += 1;
     }
-    else if (Object.keys(dietObj)[2] == diet) {
+    else if (diet === "omnivore") {
       dietObj.omnivore += 1;
     }
   }

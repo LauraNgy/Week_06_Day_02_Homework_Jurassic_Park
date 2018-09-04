@@ -7,10 +7,12 @@ describe('Park', function() {
   let park;
   let dinosaur1;
   let dinosaur2;
+  let dinosaur3;
 
   beforeEach(function () {
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
     dinosaur2 = new Dinosaur('brontosaurus', 'omnivore', 35);
+    dinosaur2 = new Dinosaur('brontosaurus', 'erbivore', 25);
     const dinosaurs = [dinosaur1];
     park = new Park ("Jurassic", 5, dinosaurs);
   })

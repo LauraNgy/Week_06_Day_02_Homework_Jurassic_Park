@@ -4,8 +4,12 @@ const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function() {
 
-  beforeEach(function () {
+  let park;
+  let dinosaur;
 
+  beforeEach(function () {
+    dinosaur = new Dinosaur('t-rex', 'carnivore', 50);
+    park = new Park ("Jurassic", 5, [dinosaur]);
   })
 
   it('should have a name');

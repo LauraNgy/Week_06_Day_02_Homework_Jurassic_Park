@@ -36,10 +36,18 @@ Park.prototype.dinosOfSpecies = function (species) {
 
 Park.prototype.removeDinosOfSpecies = function (species) {
   let dinos = this.dinosOfSpecies(species);
-  for (let i = 0; i < dinos.length; i++){
+  for (let i = 0; i < dinos.length; i++) {
     dinoIndex = this.dinosaurs.indexOf(dinos[i]);
     this.dinosaurs.splice(dinoIndex, 1);
   }
+};
+
+Park.prototype.dailyVisitors = function () {
+  let visitors = 0;
+  for (let i = 0; i < this.dinosaurs.length; i++) {
+    visitors += this.dinosaurs[i].guestsAttractedPerDay;
+  }
+  return visitors;
 };
 
 module.exports = Park;

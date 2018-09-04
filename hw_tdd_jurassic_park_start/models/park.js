@@ -58,4 +58,23 @@ Park.prototype.yearlyRevenue = function () {
   return this.yearlyVisitors() * this.entry_fee;
 };
 
+Park.prototype.diet = function () {
+  let dietObj = {'carnivore': 0,
+              'herbivore': 0,
+              'omnivore': 0};
+  for (let i = 0; i < this.dinosaurs.length; i++){
+    const diet = this.dinosaurs[i].diet;
+    if (Object.keys(dietObj)[0] == diet) {
+      dietObj.carnivore += 1;
+    }
+    else if (Object.keys(dietObj)[1] == diet) {
+      dietObj.herbivore += 1;
+    }
+    else if (Object.keys(dietObj)[2] == diet) {
+      dietObj.omnivore += 1;
+    }
+  }
+  return dietObj;
+};
+
 module.exports = Park;

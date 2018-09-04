@@ -12,7 +12,7 @@ describe('Park', function() {
   beforeEach(function () {
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
     dinosaur2 = new Dinosaur('brontosaurus', 'omnivore', 35);
-    dinosaur3 = new Dinosaur('brontosaurus', 'herbivore', 25);
+    dinosaur3 = new Dinosaur('brontosaurus', 'carnivore', 25);
     const dinosaurs = [dinosaur1];
     park = new Park ("Jurassic", 5, dinosaurs);
   })
@@ -83,6 +83,13 @@ describe('Park', function() {
     park.addDinosaur(dinosaur2);
     const actual = park.yearlyRevenue();
     assert.strictEqual(actual, 155125);
+  });
+
+  it("should provide an object containing each of the diet types and the number of dinosaurs in the park of that diet type", function() {
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    const actual = park.diet();
+    assert.deepStrictEqual(actual, {'carnivore': 2, 'herbivore':0, 'omnivore': 1});
   });
 
 });

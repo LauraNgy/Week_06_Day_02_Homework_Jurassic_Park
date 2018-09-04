@@ -34,4 +34,12 @@ Park.prototype.dinosOfSpecies = function (species) {
   return dinos;
 };
 
+Park.prototype.removeDinosOfSpecies = function (species) {
+  let dinos = this.dinosOfSpecies(species);
+  for (let i = 0; i < dinos.length; i++){
+    dinoIndex = this.dinosaurs.indexOf(dinos[i]);
+    this.dinosaurs.splice(dinoIndex, 1);
+  }
+};
+
 module.exports = Park;
